@@ -1,0 +1,59 @@
+pipeline {
+    agent any
+    environment {
+        NAME="${env.JOB_NAME}"
+        Build_Id="${env.BUILD_ID}"
+    }
+    stages {
+        stage("编译打包") {
+            steps {
+                script {
+                    def ProjectBranch = env.GIT_BRANCH.split("/")[1]
+                    sh "curl -i -X POST -H \"'Content-type':'application/json'\" -d \'{\"buildid\":\"${env.BUILD_ID}\",\"jenkinsjobname\":\"${env.JOB_NAME}\",\"buildurl\":\"${env.BUILD_URL}\",\"branchname\":\"${env.GIT_BRANCH}\",\"images\":\"\",\"status\":\"构建中\",\"steps\":\"start\"}\' http://10.200.0.128:80/project/jenkins/buildInfo"
+                    sh "echo $env"
+                    echo "${ProjectBranch}"
+                    if (ProjectBranch == "master"){
+                        sh "npm config set registry https://registry.npm.taobao.org && npm cache clear --force && npm install && npm install echarts@5.0.2 && npm run build"
+                    }else if (ProjectBranch == "test"){
+                        sh "npm config set registry https://registry.npm.taobao.org && npm cache clear --force && npm install && npm install echarts@5.0.2 && npm run build:test"
+                    }else {
+                        sh "npm config set registry https://registry.npm.taobao.org && npm cache clear --force && npm install && npm install echarts@5.0.2 && npm run build:dev"
+                    }
+                }
+            }
+        }
+        
+        stage("上传项目包") {
+            steps {
+                script {
+                    def ProjectBranch = env.GIT_BRANCH.split("/")[1]
+                    def contentRegex = "/.{0,10}/"
+                    def commit = "${env.GIT_COMMIT}"
+                    def commitSha1_10 = sh label: "", returnStdout: true, script: "expr substr '${commit}' 1 10"
+                    commitSha1_10=commitSha1_10.replaceAll("\n","")
+                    def timeStr = new Date().format('yyyyMMddHHmm')
+                    def zipFile = "${NAME}-${ProjectBranch}-${Build_Id}-${commitSha1_10}-${timeStr}.zip"
+                    sh "cd dist/ && zip -r ${zipFile} ./*"
+                    sh "curl -F \"loadFile=@dist/${zipFile}\" -F \"fileName=${zipFile}\" -F \"appName=${NAME}\" -X POST \"http://10.200.0.128:80/upFile\" "
+                    sh "curl -i -X POST -H \"'Content-type':'application/json'\" -d \'{\"buildid\":\"${env.BUILD_ID}\",\"jenkinsjobname\":\"${env.JOB_NAME}\",\"buildurl\":\"${env.BUILD_URL}\",\"branchname\":\"${env.GIT_BRANCH}\",\"images\":\"${zipFile}\",\"status\":\"构建成功\",\"steps\":\"end\"}\' http://10.200.0.128:80/project/jenkins/buildInfo"
+                }
+            }
+        }
+        
+        stage("清理空间") {
+            steps {
+                sh "ls -al"
+                deleteDir()
+                sh "ls -al"
+            }
+        }
+    }
+    post {
+        failure {
+            sh "curl -i -X POST -H \"'Content-type':'application/json'\" -d \'{\"buildid\":\"${env.BUILD_ID}\",\"jenkinsjobname\":\"${env.JOB_NAME}\",\"buildurl\":\"${env.BUILD_URL}\",\"branchname\":\"${env.GIT_BRANCH}\",\"images\":\"\",\"status\":\"构建失败\",\"steps\":\"end\"}\' http://10.200.0.128:80/project/jenkins/buildInfo"
+            sh "ls -al"
+            deleteDir()
+            sh "ls -al"
+        }
+    }
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>my_icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.98999995">
+        <g id="底部tabicon优化" transform="translate(-317.000000, -27.000000)">
+            <g id="编组-6">
+                <g id="编组备份-7">
+                    <g id="编组备份" transform="translate(35.000000, 27.000000)">
+                        <g id="编组-3">
+                            <g id="icon/24*24/我的/点击" transform="translate(282.000000, 0.000000)">
+                                <g id="编组-9备份">
+                                    <rect id="矩形" x="0" y="0" width="24" height="24.3478261"></rect>
+                                    <ellipse id="椭圆形备份-9" stroke="#000000" stroke-width="1.6" cx="12" cy="10.1449275" rx="8.2" ry="8.33043478"></ellipse>
+                                    <g id="编组" transform="translate(8.000000, 9.130435)" stroke="#BEB2F2" stroke-linecap="round" stroke-width="2">
+                                        <line x1="0.5" y1="0" x2="0.5" y2="2.02898551" id="路径-22备份-5"></line>
+                                        <line x1="7.5" y1="0" x2="7.5" y2="2.02898551" id="路径-22备份-6"></line>
+                                    </g>
+                                    <line x1="8" y1="22.3188406" x2="16" y2="22.3188406" id="路径-21备份-2" stroke="#000000" stroke-width="1.6" stroke-linecap="round"></line>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

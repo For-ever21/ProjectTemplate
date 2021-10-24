@@ -1,0 +1,32 @@
+/**
+ * @description: 一行超出显示三个点
+ */
+.ellipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/**
+ * @description: 禁止长按选中
+ */
+.noSelect() {
+  //禁止长按选中
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/**
+ * @description: 多行超出显示三个点 默认两行
+ */
+.oneLine(@overflow: 2) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box !important;
+  -webkit-line-clamp: @overflow;
+  -webkit-box-orient: vertical;
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Personal Center_ic_wdys</title>
+    <g id="tab统一" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="切图" transform="translate(-253.000000, -286.000000)" stroke-width="2">
+            <g id="Personal-Center_ic_wdys" transform="translate(253.000000, 286.000000)">
+                <line x1="19" y1="23" x2="25" y2="23" id="直线" stroke="#3F7BFD" stroke-linecap="round"></line>
+                <line x1="19.5" y1="22.5" x2="25" y2="22.5" id="直线备份" stroke="#3F7BFD" stroke-linecap="round" transform="translate(22.000000, 22.500000) rotate(90.000000) translate(-22.000000, -22.500000) "></line>
+                <circle id="椭圆形" stroke="#3F7BFD" cx="14.7106934" cy="11.25" r="8.5"></circle>
+                <path d="M11.2179008,13.3498522 C12.0275136,15.0767663 13.5538664,15.5420346 14.7711872,15.5420346 C15.9651457,15.5420346 17.5324389,14.9811481 18.3244735,13.3498522" id="路径" stroke="#3F7BFD" stroke-linecap="round"></path>
+                <path d="M13.5559082,19.6635742 C11.6104929,19.6635742 9.34179688,20.486084 7.40112305,21.5195312 C5.46044922,22.5529785 3.66779403,24.4716169 2.87736003,26.25" id="路径" stroke="#2C7AF5" stroke-linecap="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,231 @@
+// 鼠标禁止操作
+.notAllowed {
+  cursor: not-allowed;
+}
+.pointer {
+  cursor: pointer;
+}
+
+// 禁止换行
+.nowarp {
+  white-space: nowrap;
+}
+
+// dialog
+.iw-dialog {
+  background: #ffffff;
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 20px 40px;
+  .el-dialog__header {
+    padding: 0;
+  }
+  .el-dialog__title {
+    position: relative;
+    margin-left: 14px;
+    height: 25px;
+    font-size: 18px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #000000;
+    line-height: 25px;
+    &::before {
+      position: absolute;
+      left: -14px;
+      top: 4.5px;
+      content: "";
+      width: 4px;
+      height: 16px;
+      background: #333ddd;
+      border-radius: 2px;
+    }
+  }
+  .el-dialog__body {
+    text-align: center;
+    padding: 20px 0;
+    // height: 22px;
+    font-size: 14px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #666666;
+    line-height: 22px;
+  }
+  .el-dialog__footer {
+    text-align: center;
+    padding: 0;
+    .el-button + .el-button {
+      margin-left: 40px;
+    }
+  }
+}
+.preview-dialog {
+  width: 391px;
+  height: 683px;
+  padding: 8px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  .el-dialog__header {
+    display: none;
+  }
+  .el-dialog__body {
+    padding: 0;
+  }
+  .preview {
+    height: auto;
+    overflow-y: auto;
+    & > .contain {
+      margin: 0 !important;
+    }
+  }
+  .fixed {
+    position: fixed;
+    width: 375px;
+    top: 652px;
+    &.buttonComp {
+      width: 375px;
+      height: 74px;
+    }
+  }
+  .fixedWrap {
+    margin-top: 74px;
+  }
+}
+
+// form
+.iw-form {
+  .el-form-item--small.el-form-item {
+    padding: 0 5px 0 26px;
+  }
+  .el-form-item__label {
+    position: relative;
+    color: #333;
+    padding: 0;
+  }
+  .two {
+    .el-form-item__content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .el-input,
+    .el-date-editor.el-input {
+      width: 100px !important;
+    }
+    .el-input-number--small {
+      width: 100px;
+    }
+  }
+  .line {
+    width: 20px;
+    text-align: center;
+  }
+  .el-input,
+  .el-date-editor.el-input,
+  .el-textarea,
+  .el-date-editor--datetimerange.el-input__inner {
+    width: 218px !important;
+  }
+  .el-date-editor--datetimerange.el-input__inner {
+    .el-icon-time {
+      display: none;
+    }
+    .el-range__close-icon {
+      display: none;
+    }
+    .el-range-input {
+      width: auto;
+      min-width: 45%;
+    }
+  }
+  .el-range-separator {
+    padding: 0;
+    font-size: 12px;
+  }
+  .el-range-editor.el-input__inner {
+    padding: 3px 5px;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+  }
+  .el-input__inner {
+    color: #333;
+    font-size: 12px;
+  }
+  .mb20 {
+    .el-form-item--small.el-form-item {
+      margin-bottom: 15px;
+    }
+  }
+  .el-form-item--small.el-form-item {
+    margin-bottom: 20px;
+  }
+  .el-form-item--small .el-form-item__error {
+    padding-top: 2px;
+  }
+  .el-form-item.is-required:not(.is-no-asterisk) > .el-form-item__label:before {
+    content: "*";
+    position: absolute;
+    left: -6px;
+    font-size: 20px;
+    top: 2px;
+    color: #ff3b30;
+    margin-right: 0;
+  }
+  .custom-uploader {
+    margin-left: 20px;
+  }
+  .info_title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px 0 28px;
+    margin-bottom: 20px;
+    & > h2 {
+      height: 20px;
+      font-size: 14px;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 500;
+      color: #333333;
+      line-height: 20px;
+    }
+    .del,
+    .add {
+      cursor: pointer;
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+    .del {
+      color: #ff2c2c;
+      flex: 1;
+      text-align: right;
+    }
+    .add {
+      margin-left: 10px;
+      color: #333ddd;
+    }
+  }
+  .no-label {
+    padding: 0 !important;
+    margin-bottom: 40px !important;
+    .el-form-item__content {
+      margin-left: 0 !important;
+    }
+    .el-form-item__error{
+      margin-left: 20px;
+    }
+  }
+}
+
+// divider
+.iw-divider {
+  margin: 9px 0;
+  .el-divider__text {
+    color: #333;
+    font-size: 16px;
+  }
+}
+
+.active .sku-popup {
+  border: 1px solid #333ddd;
+}

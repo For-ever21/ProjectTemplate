@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>home_icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.98999995">
+        <g id="底部tabicon优化" transform="translate(-35.000000, -27.000000)">
+            <g id="编组-6">
+                <g id="编组备份-7">
+                    <g id="编组备份" transform="translate(35.000000, 27.000000)">
+                        <g id="编组-3">
+                            <g id="icon/24*24/首页/点击">
+                                <g id="编组-6">
+                                    <rect id="矩形" x="0" y="0" width="24" height="24.3478261"></rect>
+                                    <polyline id="路径-5备份-2" stroke="#333333" stroke-width="1.6" stroke-linecap="round" points="3 11.1594203 12.1605889 3.04347826 21 11.1594203"></polyline>
+                                    <path d="M5,9.13043478 L5,18.2898551 C5,19.3944246 5.8954305,20.2898551 7,20.2898551 L17,20.2898551 C18.1045695,20.2898551 19,19.3944246 19,18.2898551 L19,9.50626471 L19,9.50626471" id="路径-18备份-2" stroke="#333333" stroke-width="1.6"></path>
+                                    <path d="M8,13.1884058 C8,15.4295613 9.790861,17.2463768 12,17.2463768 C14.209139,17.2463768 16,15.4295613 16,13.1884058" id="路径备份-3" fill="#BEB2F2"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,62 @@
+pipeline {
+    agent any
+     environment {
+        NAME="${env.JOB_NAME}"
+        Build_Id="${env.BUILD_ID}"
+    }
+    stages {
+        stage("编译打包") {
+            steps {
+                script {
+                   def ProjectBranch = env.GIT_BRANCH.split("/")[1]
+                    sh "curl -i -X POST -H \"'Content-type':'application/json'\" -d \'{\"buildid\":\"${env.BUILD_ID}\",\"jenkinsjobname\":\"${env.JOB_NAME}\",\"buildurl\":\"${env.BUILD_URL}\",\"branchname\":\"${env.GIT_BRANCH}\",\"images\":\"\",\"status\":\"构建中\",\"steps\":\"start\"}\' http://10.200.0.128:80/project/jenkins/buildInfo"
+                    sh "echo $env"
+                    echo "${ProjectBranch}"
+                    if (ProjectBranch == "master"){
+                        sh "npm config set registry http://npm.wenwo.com && rm -rf node_modules package-lock.json dist && npm install && npm run build"
+                    }else if (ProjectBranch == "test"){
+                        sh "npm config set registry http://npm.wenwo.com && rm -rf node_modules package-lock.json dist && npm install && npm run build:test"
+                    }else if (ProjectBranch == "rebuild-test"){
+                        sh "npm config set registry http://npm.wenwo.com && rm -rf node_modules package-lock.json dist && npm install && npm run build:rebuild-test"
+                    }else if (ProjectBranch == "rebuild-dev"){
+                        sh "npm config set registry http://npm.wenwo.com && rm -rf node_modules package-lock.json dist && npm install && npm run build:rebuild-dev"
+                    }else if (ProjectBranch == "uat"){
+                        sh "npm config set registry http://npm.wenwo.com && rm -rf node_modules package-lock.json dist && npm install && npm run build:uat"
+                    }else {
+                        sh "npm config set registry http://npm.wenwo.com && rm -rf node_modules package-lock.json dist && npm install && npm run build:dev"
+                    }
+                }
+            }
+        }
+
+        stage("上传项目包") {
+            steps {
+                script {
+                    def projectBranch = env.GIT_BRANCH.split("/")[1]
+                    def contentRegex = "/.{0,10}/"
+                    def commit = "${env.GIT_COMMIT}"
+                    def commitSha1_10 = sh label: "", returnStdout: true, script: "expr substr '${commit}' 1 10"
+                    commitSha1_10=commitSha1_10.replaceAll("\n","")
+                    def zipFile = "${NAME}-${Build_Id}-${commitSha1_10}.zip"
+                    sh "cd dist/ && zip -r ${zipFile} ./*"
+                    sh "curl -F \"loadFile=@dist/${NAME}-${Build_Id}-${commitSha1_10}.zip\" -F \"fileName=${NAME}-${projectBranch}-${Build_Id}-${commitSha1_10}.zip\" -F \"appName=${NAME}\" -X POST \"http://10.200.0.128:80/upFile\" "
+                    sh "curl -i -X POST -H \"'Content-type':'application/json'\" -d \'{\"buildid\":\"${env.BUILD_ID}\",\"jenkinsjobname\":\"${env.JOB_NAME}\",\"buildurl\":\"${env.BUILD_URL}\",\"branchname\":\"${env.GIT_BRANCH}\",\"images\":\"${NAME}-${projectBranch}-${Build_Id}-${commitSha1_10}.zip\",\"status\":\"构建成功\",\"steps\":\"end\"}\' http://10.200.0.128:80/project/jenkins/buildInfo"
+
+                }
+            }
+        }
+
+        stage("清理空间") {
+            steps {
+                sh "ls -al"
+                deleteDir()
+                sh "ls -al"
+            }
+        }
+    }
+     post {
+            failure {
+                sh "curl -i -X POST -H \"'Content-type':'application/json'\" -d \'{\"buildid\":\"${env.BUILD_ID}\",\"jenkinsjobname\":\"${env.JOB_NAME}\",\"buildurl\":\"${env.BUILD_URL}\",\"branchname\":\"${env.GIT_BRANCH}\",\"images\":\"\",\"status\":\"构建失败\",\"steps\":\"end\"}\' http://10.200.0.128:80/project/jenkins/buildInfo"
+            }
+     }
+}

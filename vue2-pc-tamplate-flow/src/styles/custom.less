@@ -1,0 +1,194 @@
+.blue_deep {
+  color: @blue-deep;
+}
+
+// 鼠标手势
+.pointer {
+  cursor: pointer;
+}
+
+// 鼠标禁止操作
+.notAllowed {
+  cursor: not-allowed;
+}
+
+// 禁止换行
+.nowarp {
+  white-space: nowrap;
+}
+
+// table 的操作栏样式
+.right_link {
+  .el-button {
+    color: @blue-deep;
+    &:not(:last-child) {
+      padding-right: 6px;
+      position: relative;
+      &::after {
+        content: "";
+        width: 1px;
+        height: 14px;
+        background: #eeeeee;
+        position: absolute;
+        right: -4px;
+      }
+    }
+  }
+}
+
+// table 顶上的搜索查询项
+.filter-container {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  .el-input {
+    width: 220px;
+    margin-bottom: 10px;
+  }
+  .el-date-editor {
+    width: 220px;
+    margin-bottom: 10px;
+    .el-range-input {
+      width: 45%;
+    }
+    .el-icon-date {
+      font-size: 0;
+      width: 0;
+      // margin-left: -10px;
+    }
+    .el-range__close-icon {
+      width: 10px;
+    }
+  }
+  .el-input,
+  .el-date-editor {
+    margin-right: 24px;
+    background: #fff;
+  }
+  .searchbtn {
+    width: 100px !important;
+    margin-bottom: 10px;
+  }
+  .operate {
+    margin-left: auto;
+    margin-bottom: 10px;
+  }
+  .createTimeSelect {
+    padding: 3px 5px 3px 10px;
+    /deep/.el-range-input {
+      font-size: 12px;
+    }
+    /deep/.el-icon-date {
+      font-size: 14px;
+      width: 25px;
+    }
+  }
+  .bindFloat {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.plain-radio {
+  .el-radio-button__orig-radio:checked + .el-radio-button__inner {
+    background: #e0dbf9;
+    border-color: @default-color;
+    color: @default-color;
+  }
+}
+.page_title {
+  font-size: 20px;
+  font-family: MicrosoftYaHei-Bold, MicrosoftYaHei;
+  font-weight: bold;
+  color: #000000;
+  position: relative;
+  padding-bottom: 10px;
+  padding-left: 12px;
+  &::before {
+    content: "";
+    width: 4px;
+    height: 16px;
+    background: @default-color;
+    border-radius: 2px;
+    position: absolute;
+    left: 0px;
+    top: 6px;
+  }
+}
+
+.link {
+  display: inline-block;
+  cursor: pointer;
+  margin: 0 4px 0 2px;
+  & > img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.addAccountAlert {
+  width: 500px;
+  padding: 40px;
+  box-sizing: border-box;
+  background: #ffffff;
+  box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  .el-message-box__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    .el-message-box__headerbtn {
+      position: relative;
+      top: 0;
+      right: 0;
+    }
+    .el-message-box__title {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+      font-family: MicrosoftYaHei;
+      color: #000;
+      &::before {
+        content: "";
+        width: 4px;
+        height: 16px;
+        background: @default-color;
+        border-radius: 2px;
+        margin-right: 10px;
+      }
+    }
+  }
+  .el-message-box__content {
+    margin-top: 40px;
+    padding: 0;
+    font-size: 16px;
+    font-family: MicrosoftYaHei;
+    color: #333;
+    text-align: center;
+  }
+  .el-message-box__btns {
+    margin-top: 40px;
+    text-align: center;
+    .el-button {
+      width: 128px;
+      height: 40px;
+      background: @default-color;
+      border-radius: 4px;
+      font-size: 14px;
+      font-family: MicrosoftYaHei;
+      color: #fff;
+    }
+  }
+}
+
+// 去除 input自动填充背景色
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 32px #fff inset;
+  -webkit-text-fill-color: #333;
+}
+
+.el-input {
+  background-color: #fff !important;
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/ly</title>
+    <g id="-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="切图" transform="translate(-86.000000, -440.000000)">
+            <g id="icon/ly" transform="translate(86.000000, 440.000000)">
+                <g id="编组-2">
+                    <rect id="矩形" x="0" y="0" width="24" height="24" rx="3"></rect>
+                    <ellipse id="椭圆形" fill="#CCCCCC" cx="7.87053571" cy="11.3846154" rx="1.29017857" ry="1.23076923"></ellipse>
+                    <ellipse id="椭圆形备份-2" fill="#CCCCCC" cx="11.7410714" cy="11.3846154" rx="1.29017857" ry="1.23076923"></ellipse>
+                    <ellipse id="椭圆形备份-3" fill="#CCCCCC" cx="15.6116071" cy="11.3846154" rx="1.29017857" ry="1.23076923"></ellipse>
+                    <path d="M19.8172297,13.1675934 C19.9226026,12.6728341 19.9779257,12.1606836 19.9779257,11.6361822 C19.9779257,7.41883522 16.4011452,4 11.9889629,4 C7.57678051,4 4,7.41883522 4,11.6361822 C4,15.8535291 7.57749397,19.2723644 11.9889629,19.2723644 C12.9457703,19.2723644 14.2930802,19.2594239 15.6805542,19.2137587 C18.0232817,19.1366536 20.414472,18.9626961 20.7723214,18.7692308 C21.1301709,18.5757654 18.4562185,17.8178535 19.2170721,16.3633426" id="路径" stroke="#CCCCCC" stroke-width="1.4" stroke-linecap="round"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

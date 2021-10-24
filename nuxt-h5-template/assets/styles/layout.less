@@ -1,0 +1,168 @@
+/* 页面布局样式 */
+.layout__page {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  user-select: none;
+  background: #f8f8f8;
+}
+
+/* 顶部导航 */
+.layout__header {
+  flex: 0 0 auto;
+  padding-top: 20px;
+  background: #fff;
+  z-index: 1000;
+  position: relative;
+
+  @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+    & {
+      padding-top: 44px;
+    }
+  }
+
+  @media only screen and (device-width: 414px) and (device-height: 896px) {
+    & {
+      padding-top: 44px;
+    }
+  }
+}
+
+/* 页面主体（除底部导航） */
+.layout__body {
+  flex: 0 1 100%;
+  font-size: 14px;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+
+/* 页面底部操作按钮 */
+.bottom-button--submit {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  padding: 10px 16px;
+}
+
+/*  空列表提示语样式 */
+.list-no-content-tip {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #999;
+}
+// 返回主页 悬浮按钮
+a.fixBackHome {
+  position: fixed;
+  bottom: 33px;
+  left: 14px;
+  z-index: 99;
+  .backToIndex {
+    display: block;
+    width: 46px;
+    height: 46px;
+    background: url("../images/home.png") no-repeat center;
+    background-size: contain;
+  }
+}
+// 列表项通用样式
+.links_list {
+  // padding: 0 20px;
+  box-sizing: border-box;
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    line-height: 60px;
+    align-items: center;
+    color: #333333;
+    font-size: 16px;
+    background: url(../images/icons/arrow.png) no-repeat right center;
+    background-size: 20px 20px;
+    box-sizing: border-box;
+    background-position-x: calc(100% - 10px);
+    padding: 0 20px;
+    padding-right: 34px;
+
+    .link_tit {
+      font-weight: 600;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .headimg {
+      width: 46px;
+      height: 46px;
+      border: 1px solid #e9e9e9;
+      border-radius: 46px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+
+      img {
+        display: block;
+        width: 42px;
+        height: 42px;
+        border-radius: 42px;
+      }
+
+      input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 3;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+      }
+
+      .uploadLoanding {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        line-height: 39px;
+      }
+    }
+
+    .name {
+      font-size: 16px;
+      color: #999;
+      line-height: 22px;
+    }
+
+    .sex {
+      text-align: right;
+      width: 50px;
+      font-size: 16px;
+      color: #999;
+      position: relative;
+      z-index: 1;
+
+      select {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        opacity: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>community_icon_sel</title>
+    <desc>Created with Sketch.</desc>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.98999995">
+        <g id="底部tabicon优化" transform="translate(-223.000000, -27.000000)">
+            <g id="编组-6">
+                <g id="编组备份-7">
+                    <g id="编组备份" transform="translate(35.000000, 27.000000)">
+                        <g id="编组-3">
+                            <g id="icon/24*24/找社区/点击" transform="translate(188.000000, 0.000000)">
+                                <g id="编组-8" transform="translate(11.125393, 12.427184) rotate(22.000000) translate(-11.125393, -12.427184) translate(-0.374607, 0.927184)">
+                                    <rect id="矩形" x="0.639887173" y="0.327551372" width="22" height="22"></rect>
+                                    <path d="M19.7569735,9.04657433 C18.9264112,5.42126289 15.6223206,2.73177407 11.6507408,2.85090972 C7.17699062,2.98510899 3.59959082,6.64325269 3.59959082,11.1591569 C3.59959082,14.8451113 6.12142169,18.104041 9.44367999,19.125" id="路径" stroke="#333333" stroke-width="1.6" stroke-linecap="round"></path>
+                                    <line x1="9.28889412" y1="10.3716204" x2="9.29057892" y2="12.284318" id="路径-22备份-3" stroke="#BEB2F2" stroke-width="2" opacity="0.699999988" stroke-linecap="round" transform="translate(9.289737, 11.327969) rotate(-45.000000) translate(-9.289737, -11.327969) "></line>
+                                    <line x1="13.1238775" y1="6.5383015" x2="13.1238775" y2="8.45496816" id="路径-22备份-4" stroke="#BEB2F2" stroke-width="2" opacity="0.699999988" stroke-linecap="round" transform="translate(13.123877, 7.496635) rotate(-45.000000) translate(-13.123877, -7.496635) "></line>
+                                    <path d="M16.9529715,4.48638537 C18.9023793,3.66973494 20.2308317,3.673809 21.0970923,4.27524696 C23.1382326,5.69239477 20.4143598,9.98130216 15.7598387,14.6437575 C11.1053177,19.3062129 6.41117291,22.7995061 4.652959,21.0382951 C3.86488199,20.2488747 3.9024678,18.8306543 4.60223802,17.0159158" id="路径" stroke="#333333" stroke-width="1.6" stroke-linecap="round"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

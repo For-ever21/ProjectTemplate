@@ -1,0 +1,109 @@
+// 复写  element-ui 样式
+
+// UI标准 Dialog 宽度自己设置
+.standard-dialog {
+  // width: 440px;
+  background: #ffffff;
+  box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  border: 1px solid #e4e7ed;
+  .el-dialog__header {
+    padding: 40px 40px 32px 40px;
+    .el-dialog__title {
+      font-size: 18px;
+      font-family: MicrosoftYaHei;
+      color: #000000;
+      position: relative;
+      &::after {
+        content: "";
+        width: 4px;
+        height: 16px;
+        background: @default-color;
+        border-radius: 2px;
+        position: absolute;
+        left: -12px;
+        top: 4px;
+      }
+    }
+    .el-dialog__headerbtn {
+      top: 40px;
+      right: 40px;
+    }
+  }
+  .el-dialog__body {
+    padding: 0 40px 80px;
+    .el-form {
+      .el-input,
+      .el-select {
+        width: 260px;
+      }
+      .el-form-item__label {
+        font-family: MicrosoftYaHei;
+        color: #000000;
+        padding-right: 30px;
+      }
+    }
+  }
+  .el-dialog__footer {
+    padding: 0 0 40px;
+    text-align: center;
+  }
+}
+
+.addAccount {
+  .el-dialog__body {
+    padding: 0 40px 40px !important;
+  }
+}
+
+// element-ui table表格样式重置
+.el-table {
+  thead {
+    tr {
+      background: #fafafa;
+      th {
+        background: #fafafa;
+        height: 54px;
+        font-size: 14px;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: #666;
+      }
+    }
+  }
+  tbody {
+    tr {
+      height: 76px;
+      font-size: 14px;
+      color: #333;
+    }
+  }
+  .cell {
+    padding: 0 24px !important;
+  }
+}
+
+// 下啦选择框样式控制
+.el-select-dropdown {
+  .el-scrollbar__view {
+    .el-select-dropdown__item {
+      height: 40px;
+      line-height: 40px;
+    }
+  }
+}
+
+// 修改密码dialog 样式重置
+
+.editPasswordDialog {
+  width: 480px !important;
+  border: none !important;
+  background: transparent;
+  box-shadow: none;
+  /deep/.el-dialog__header {
+    display: none;
+  }
+  /deep/.el-dialog__body {
+    padding: 0;
+  }
+}
