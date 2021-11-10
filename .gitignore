@@ -39,6 +39,12 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
+nuxt-h5-template/node_modules/
+vue2-h5-template/node_modules/
+vue2-pc-template/node_modules/
+vue2-pc-template-flow/node_modules/
+vue2-pc-template-TMS/node_modules/
+vue3-h5-template/node_modules/
 
 # TypeScript v1 declaration files
 typings/

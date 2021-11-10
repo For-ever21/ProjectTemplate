@@ -19,7 +19,7 @@
     "noEmit": true,
     "experimentalDecorators": true,
     "strictPropertyInitialization": false,
-    "baseUrl": ".",
+    "baseUrl": "../../ProjectTemplate",
     "paths": {
       "@/*": [
         "./*"
